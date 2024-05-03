@@ -1,20 +1,21 @@
 {
-    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-    "extends": [
-      "config:recommended",
-      ":dependencyDashboard",
-      ":disableRateLimiting",
-      "docker:enableMajor",
-      ":enablePreCommit",
-      "github>joryirving/renovate-config:autoMerge",
-      "github>joryirving/renovate-config:commitMessage",
-      "github>joryirving/renovate-config:labels",
-      "github>joryirving/renovate-config:semanticCommits"
-    ],
-    "timezone": "America/Edmonton",
-    "dependencyDashboardTitle": "Renovate Dashboard 🤖",
-    "suppressNotifications": ["prEditedNotification", "prIgnoreNotification"],
-    "rebaseWhen": "conflicted",
-    "commitBodyTable": true,
-    "platformCommit": true
-  }
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    ":dependencyDashboard",
+    ":disableRateLimiting",
+    "docker:enableMajor",
+    ":enablePreCommit",
+    "mergeConfidence:all-badges",
+    "github>ekenheim/renovate-config:autoMerge",
+    "github>ekenheim/renovate-config:commitMessage",
+    "github>ekenheim/renovate-config:labels",
+    "github>ekenheim/renovate-config:semanticCommits"
+  ],
+  "timezone": "Europe/Stockholm",
+  "dependencyDashboardTitle": "Renovate Dashboard 🤖",
+  "suppressNotifications": ["prEditedNotification", "prIgnoreNotification"],
+  "rebaseWhen": "conflicted",
+  "commitBodyTable": true,
+  "platformCommit": true
+}
