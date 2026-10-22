@@ -18,5 +18,16 @@
   "suppressNotifications": ["prEditedNotification", "prIgnoreNotification"],
   "rebaseWhen": "conflicted",
   "commitBodyTable": true,
-  "platformCommit": "enabled"
+  "platformCommit": "enabled",
+  "packageRules": [
+    {
+      "description": [
+        "TypeScript 7 waits for its tooling: typescript-eslint (also behind eslint-config-next) refuses to run on it (typescript-eslint/typescript-eslint#10940) and @astrojs/check only accepts 5 or 6, so the major fails lint or can't resolve its lockfile.",
+        "Only repos still on 6 or older are held (matched on the locked version); a repo already on 7 keeps its updates. Remove this rule once typescript-eslint supports 7."
+      ],
+      "matchPackageNames": ["typescript"],
+      "matchCurrentVersion": "<7",
+      "allowedVersions": "<7"
+    }
+  ]
 }
