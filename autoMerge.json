@@ -7,15 +7,19 @@
         "automerge": true,
         "automergeType": "branch",
         "matchUpdateTypes": ["digest"],
-        "matchPackagePatterns": ["ghcr.io/bjw-s", "ghcr.io/onedr0p"]
+        "matchPackageNames": ["/^ghcr\\.io\\/bjw-s(-labs)?\\//", "/^ghcr\\.io\\/onedr0p\\//"]
       },
       {
-        "description": ["Auto-merge GitHub Actions for minor and patch"],
+        "description": [
+          "Auto-merge GitHub Actions for minor and patch, three days after release.",
+          "Workflows run with repository secrets and these merge without review, so a hijacked action release (tj-actions, March 2025) gets time to be caught and pulled first."
+        ],
         "matchManagers": ["github-actions"],
         "matchDatasources": ["github-tags"],
         "automerge": true,
         "automergeType": "branch",
-        "matchUpdateTypes": ["minor", "patch", "digest"]
+        "matchUpdateTypes": ["minor", "patch", "digest"],
+        "minimumReleaseAge": "3 days"
       }
     ]
   }

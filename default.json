@@ -7,6 +7,7 @@
     "docker:enableMajor",
     ":enablePreCommit",
     "mergeConfidence:all-badges",
+    "helpers:pinGitHubActionDigests",
     "github>ekenheim/renovate-config:autoMerge",
     "github>ekenheim/renovate-config:commitMessage",
     "github>ekenheim/renovate-config:labels",
@@ -17,5 +18,5 @@
   "suppressNotifications": ["prEditedNotification", "prIgnoreNotification"],
   "rebaseWhen": "conflicted",
   "commitBodyTable": true,
-  "platformCommit": true
+  "platformCommit": "enabled"
 }
